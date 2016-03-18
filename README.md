@@ -3,8 +3,6 @@ Docker build in any Docker container
 
 ![catch!](https://github.ibm.com/afworm/discworld/blob/master/discworld.jpg?raw=true)
 
-https://github.ibm.com/afworm/discworld/blob/master/discworld.jpg?raw=true
-
 This is useful for having containers with your build tools 
 and then creating a runtime container for your application
 which is not polluted with the build tools and source code.
