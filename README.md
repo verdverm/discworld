@@ -1,7 +1,7 @@
 # discworld
 Docker build in any Docker container
 
-![catch!](https://github.ibm.com/afworm/discworld/blob/master/discworld.jpg?raw=true)
+![catch!](https://raw.github.com/verdverm/discworld/master/discworld.jpg)
 
 This is useful for having containers with your build tools 
 and then creating a runtime container for your application
