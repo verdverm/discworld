@@ -1,8 +1,9 @@
 # discworld
 Docker build in any Docker container
 
-![catch!](https://raw.github.ibm.com/afworm/discworld/master/discworld.jpg)
+![catch!](https://github.ibm.com/afworm/discworld/blob/master/discworld.jpg?raw=true)
 
+https://github.ibm.com/afworm/discworld/blob/master/discworld.jpg?raw=true
 
 This is useful for having containers with your build tools 
 and then creating a runtime container for your application
@@ -35,8 +36,28 @@ Minimal Golang Docker Image
 
 *this may be broken right now*
 
-`alias itsGophersAllTheWayDown='itsWhalesAllTheWayDown -e "APPDIR=$(pwd)" -e "EXTERNAL_GOPATH=$GOPATH" -v $(pwd):/go/src/$(basename $(pwd)) --rm -it golang-dockerizer'`
+`alias itsGophersAllTheWayDown='itsWhalesAllTheWayDown -e "APPDIR=$(pwd)" -e "EXTERNAL_GOPATH=$GOPATH" -v $(pwd):$(pwd)) --rm -it golang-dockerizer'`
 
-From your Golang project directory
+In your Golang project directory, create a Dockerfile like this:
+
+```
+FROM scratch
+
+ADD GoappBinary /GoappBinary
+
+ENTRYPOINT ["/GoappBinary"]
+
+# include any other docker stuff you'd like
+# ADD src/www /www
+# EXPOSE 8080
+# VOLUME /path/to/dir
+```
+
+Then run
 
 `itsGophersAllTheWayDown <image-name>`
+
+This will produce a Docker image with just your Golang app.
+
+
+-- Image courtesy of https://ferrebeekeeper.files.wordpress.com/2015/03/discworld.jpg --
