@@ -1,0 +1,10 @@
+FROM scratch
+
+ADD GoappBinary /GoappBinary
+
+ENTRYPOINT ["/GoappBinary"]
+
+# include any other docker stuff you'd like
+# ADD src/www /www
+# EXPOSE 8080
+# VOLUME /path/to/dir
