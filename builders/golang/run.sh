@@ -26,4 +26,4 @@ echo " - Building Golang static binary"
 CGO_ENABLED=0 go build -a -ldflags '-s' .
 
 echo " - Building minimal Docker image"
-docker build --no-cache -t $1 .
+docker build --no-cache -t $@ .
